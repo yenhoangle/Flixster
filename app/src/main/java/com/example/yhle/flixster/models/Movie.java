@@ -27,7 +27,8 @@ public class Movie {
     }
 
     public String getPosterPath() {
-        return posterPath;
+        //make poster path a full url, w = 342
+        return String.format("https://image.tmdb.org/t/p/w342/%s" + posterPath);
     }
 
     public String getTitle() {
