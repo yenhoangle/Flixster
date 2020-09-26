@@ -24,6 +24,7 @@ Flixster is an app that allows users to browse movies from the [The Movie Databa
 ### App Walkthough GIF
 <img src="https://github.com/yenhoangle/Flixster/blob/master/walkthrough.gif?raw=true" width=250><br>
 <img src="https://github.com/yenhoangle/Flixster/blob/master/walkthrough_landscape.gif?raw=true" width=450><br>
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ### Notes
 Implementing the RecyclerView was a bit difficult as there are several steps such as configuring the MovieAdapter class so that the binding process can work correctly.
