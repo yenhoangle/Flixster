@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+import com.example.yhle.flixster.adapters.ComplexMovieAdapter;
 import com.example.yhle.flixster.adapters.MovieAdapter;
 import com.example.yhle.flixster.models.Movie;
 
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
         RecyclerView rvMovies = findViewById((R.id.rvMovies));
         movies = new ArrayList<>();
 

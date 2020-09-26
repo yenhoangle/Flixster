@@ -12,12 +12,12 @@ import com.bumptech.glide.Glide;
 import com.example.yhle.flixster.R;
 import com.example.yhle.flixster.models.Movie;
 
-public class standardViewHolder extends RecyclerView.ViewHolder {
+public class RegularViewHolder extends RecyclerView.ViewHolder {
     TextView tvTitle;
     TextView tvOverview;
     ImageView ivPoster;
     Context context;
-    public standardViewHolder(@NonNull View itemView, Context context) {
+    public RegularViewHolder(@NonNull View itemView, Context context) {
         super(itemView);
         tvTitle = itemView.findViewById(R.id.tvTitle);
         tvOverview = itemView.findViewById(R.id.tvOverview);
