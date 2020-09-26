@@ -21,6 +21,7 @@ import java.util.List;
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
     Context context;
     List<Movie> movies;
+    View movieView;
 
     public MovieAdapter(Context context, List<Movie> movies) {
         this.context = context;
@@ -31,7 +32,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     @Override
     //inflates layout from XML and returning the holder
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View movieView = LayoutInflater.from(context).inflate(R.layout.item_movie, parent, false);
+        movieView = LayoutInflater.from(context).inflate(R.layout.item_movie, parent, false);
         return new ViewHolder(movieView);
     }
 
@@ -43,6 +44,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         //bind the movie data into the view holder
         holder.bind(movie);
     }
+
 
     @Override
     //return total count of items in list
