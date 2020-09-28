@@ -3,23 +3,29 @@ package com.example.yhle.flixster.models;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import java.util.ArrayList;
 import java.util.List;
+
+@Parcel //to indicate that the class is Parcelable
 
 public class Movie {
     String posterPath;
     String title;
     String overview;
     String backdropPath;
-    double vote_average;
+    double voteAverage;
+
+    // no-arg, empty constructor required for Parceler
+    public Movie() {}
 
     public Movie(JSONObject jsonObject) throws JSONException {
         posterPath = jsonObject.getString("poster_path");
         backdropPath = jsonObject.getString("backdrop_path");
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
-        vote_average = jsonObject.getDouble("vote_average");
+        voteAverage = jsonObject.getDouble("vote_average");
     }
 
     public static List<Movie> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
@@ -43,8 +49,8 @@ public class Movie {
     public String getTitle() {
         return title;
     }
-    public double getVote_average() {
-        return vote_average;
+    public double getVoteAverage() {
+        return voteAverage;
     }
 
     public String getOverview() {

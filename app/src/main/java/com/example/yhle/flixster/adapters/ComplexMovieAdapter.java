@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.yhle.flixster.R;
 import com.example.yhle.flixster.models.Movie;
-import com.example.yhle.flixster.viewHolders.PopularViewHolder;
-import com.example.yhle.flixster.viewHolders.RegularViewHolder;
+import com.example.yhle.flixster.views.PopularViewHolder;
+import com.example.yhle.flixster.views.RegularViewHolder;
 
 import java.util.List;
 
@@ -65,7 +65,7 @@ public class ComplexMovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public int getItemViewType(int position) {
         Movie movie = movies.get(position);
-        double vote_average = movie.getVote_average();
+        double vote_average = movie.getVoteAverage();
         return (vote_average > 5 ? 1:0);
     }
 }

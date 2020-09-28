@@ -1,4 +1,4 @@
-package com.example.yhle.flixster;
+package com.example.yhle.flixster.controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,7 +9,7 @@ import android.util.Log;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
-import com.example.yhle.flixster.adapters.ComplexMovieAdapter;
+import com.example.yhle.flixster.R;
 import com.example.yhle.flixster.adapters.MovieAdapter;
 import com.example.yhle.flixster.models.Movie;
 

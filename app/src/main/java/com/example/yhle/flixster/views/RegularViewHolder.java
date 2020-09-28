@@ -1,4 +1,4 @@
-package com.example.yhle.flixster.viewHolders;
+package com.example.yhle.flixster.views;
 
 import android.content.Context;
 import android.content.res.Configuration;
