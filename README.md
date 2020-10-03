@@ -1,7 +1,7 @@
 # Flixster
 Flixster is an app that allows users to browse movies from the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-## Flix Part 2
+## Flixster Part 2
 
 ### User Stories
 
@@ -35,7 +35,7 @@ I could not figure out how to overlay a play icon over the movie poster images.
 
 ---
 
-## Flix Part 1
+## Flixster Part 1
 
 ### User Stories
 
