@@ -7,7 +7,7 @@
     tools:context=".controllers.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:background="@drawable/bg_gradient_1"
+        android:background="@drawable/bg_gradient_2"
         android:id="@+id/rvMovies"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

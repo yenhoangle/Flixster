@@ -1,5 +1,6 @@
 package com.example.yhle.flixster.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -7,19 +8,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.yhle.flixster.R;
+import com.example.yhle.flixster.controllers.MainActivity;
 import com.example.yhle.flixster.controllers.MovieDetailsActivity;
 import com.example.yhle.flixster.models.Movie;
 
 import org.parceler.Parcels;
 
 import java.util.List;
+
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 //extends the recyclerview.adapter<> generic class that holds view holder object created from custom class
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
@@ -60,12 +66,16 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         TextView tvTitle;
         TextView tvOverview;
         ImageView ivPoster;
+        View rvView;
+        int radius = 30; // corner radius, higher value = more rounded
+        int margin = 10; // crop margin, set to 0 for corners with no crop
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById((R.id.tvTitle));
             tvOverview = itemView.findViewById((R.id.tvOverview));
             ivPoster = itemView.findViewById((R.id.ivPoster));
+            rvView = itemView.findViewById(R.id.rvMovie);
         }
 
         public void bind(Movie movie) {
@@ -80,9 +90,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                 imageUrl = movie.getPosterPath();
             }
 
-            //need to use Glide library to render image
-            //Glide.with.load.into
-            Glide.with(context).load(imageUrl).into(ivPoster);
+            //need to use Glide library to render image using Glide.with.load.into
+            //optional: fitcenter().transform() for rounded corners
+            Glide.with(context).load(imageUrl).fitCenter().transform(new RoundedCornersTransformation(radius, margin)).into(ivPoster);
         }
 
         @Override
@@ -95,8 +105,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                 //create intent for new activity
                 Intent intent = new Intent(context, MovieDetailsActivity.class);
                 intent.putExtra(Movie.class.getSimpleName(), Parcels.wrap(movie));
+                ActivityOptionsCompat options =
+                        ActivityOptionsCompat.makeSceneTransitionAnimation((Activity)context,
+                                (View)rvView, "movie_player");
                 //show activity
-                context.startActivity(intent);
+                context.startActivity(intent, options.toBundle());
 
             }
         }

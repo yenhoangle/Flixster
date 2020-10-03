@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
             "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
     public static final String TAG = "MainActivity";
     List<Movie> movies;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         rvMovies.setAdapter(movieAdapter);
         //set a layout manager on the recycler view
         rvMovies.setLayoutManager((new LinearLayoutManager(this)));
+
 
         //---async client portion----
         AsyncHttpClient client = new AsyncHttpClient();

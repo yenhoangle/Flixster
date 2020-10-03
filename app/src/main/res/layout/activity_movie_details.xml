@@ -2,8 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rvMovie"
+    android:transitionName="movie_transition"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/bg_gradient_2"
     tools:context="com.example.yhle.flixster.controllers.MovieDetailsActivity">
 
     <com.google.android.youtube.player.YouTubePlayerView
@@ -18,28 +21,34 @@
         android:layout_below="@+id/player"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_marginLeft="1dp"
         android:text="Movie Title"
-        android:textAppearance="@android:style/TextAppearance.Large" />
+        android:gravity="center"
+        android:textSize="26dp" />
 
     <TextView
         android:id="@+id/tvOverview"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@+id/rbVoteAverage"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_marginLeft="1dp"
+        android:textSize="20dp"
         android:text="TextView" />
 
     <RatingBar
         android:id="@+id/rbVoteAverage"
-        style="@style/Widget.AppCompat.RatingBar.Small"
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvTitle"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
+        android:layout_marginLeft="1dp"
         android:numStars="10"
+        android:progressTint="#D8A60F"
         android:stepSize="0.5" />
 </RelativeLayout>
