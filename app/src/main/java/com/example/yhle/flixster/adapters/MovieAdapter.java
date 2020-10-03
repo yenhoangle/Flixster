@@ -26,7 +26,6 @@ import org.parceler.Parcels;
 import java.util.List;
 
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
-
 //extends the recyclerview.adapter<> generic class that holds view holder object created from custom class
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
     Context context;

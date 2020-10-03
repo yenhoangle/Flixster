@@ -1,6 +1,7 @@
 package com.example.yhle.flixster.controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.yhle.flixster.R;
+import com.example.yhle.flixster.databinding.ActivityMovieDetailsBinding;
 import com.example.yhle.flixster.models.Movie;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -25,9 +27,7 @@ import okhttp3.Headers;
 
 public class MovieDetailsActivity extends YouTubeBaseActivity {
     Movie movie;
-    //view objects
-    TextView tvTitle;
-    TextView tvOverview;
+    ActivityMovieDetailsBinding binding;
     RatingBar rbVoteAverage;
     public static final String VIDEO_URL =
             "https://api.themoviedb.org/3/movie/%d/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
@@ -35,11 +35,11 @@ public class MovieDetailsActivity extends YouTubeBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_details);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_movie_details);
         //find views
-        tvTitle = (TextView) findViewById(R.id.tvTitle);
-        tvOverview = (TextView) findViewById(R.id.tvOverview);
-        rbVoteAverage = (RatingBar) findViewById(R.id.rbVoteAverage);
+        TextView tvTitle = binding.tvTitle;
+        TextView tvOverview = binding.tvOverview;
+         rbVoteAverage = binding.rbVoteAverage;
         //unwrap the movie passed in by intent
         movie = (Movie) Parcels.unwrap(getIntent().getParcelableExtra(Movie.class.getSimpleName()));
         //a log message

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rvMovie"
     android:transitionName="movie_transition"
@@ -52,3 +53,4 @@
         android:progressTint="#D8A60F"
         android:stepSize="0.5" />
 </RelativeLayout>
+</layout>

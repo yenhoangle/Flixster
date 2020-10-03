@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
+    dataBinding.enabled = true
 
     defaultConfig {
         applicationId "com.example.yhle.flixster"
@@ -39,5 +40,4 @@ dependencies {
     implementation 'jp.wasabeef:glide-transformations:4.1.0'
     // If you want to use the GPU Filters
     implementation 'jp.co.cyberagent.android:gpuimage:2.0.4'
-
 }
